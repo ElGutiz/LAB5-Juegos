@@ -11,17 +11,18 @@ public class GunScript : MonoBehaviour
     public float hitForce = 100f;
     public Transform gunEnd;
 
+    public AudioClip pointsAudio;
+    public AudioClip gunAudio;
+
     private Camera fpsCam;
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
     private LineRenderer laserLine;
     private float nextFire;
-    private AudioSource gunAudio;
 
     // Start is called before the first frame update
     void Start()
     {
         laserLine = GetComponent<LineRenderer>();
-        gunAudio = GetComponent<AudioSource>();
         fpsCam = GetComponentInParent<Camera>();
     }
 
@@ -50,6 +51,12 @@ public class GunScript : MonoBehaviour
                     health.Damage(gunDamage);
                 }
 
+                if (health.currentHealth == 0)
+                {
+                    AudioSource audio = GetComponent<AudioSource>();
+                    audio.PlayOneShot(pointsAudio);
+                }
+
                 if (hit.rigidbody != null)
                 {
                     hit.rigidbody.AddForce(-hit.normal * hitForce);
@@ -64,7 +71,8 @@ public class GunScript : MonoBehaviour
 
     private IEnumerator ShotEffect()
     {
-        gunAudio.Play();
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.PlayOneShot(gunAudio);
 
         laserLine.enabled = true;
         yield return shotDuration;
