@@ -10,6 +10,7 @@ public class GunScript : MonoBehaviour
     public float weaponRange = 50f;
     public float hitForce = 100f;
     public Transform gunEnd;
+    public static bool GameIsPaused = false;
 
     public AudioClip gunAudio;
 
@@ -64,11 +65,19 @@ public class GunScript : MonoBehaviour
 
     private IEnumerator ShotEffect()
     {
-        AudioSource audio = GetComponent<AudioSource>();
-        audio.PlayOneShot(gunAudio);
+        GameIsPaused = ThirdMenu.GameIsPaused;
+        if (GameIsPaused == false) {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.PlayOneShot(gunAudio);
 
-        laserLine.enabled = true;
-        yield return shotDuration;
-        laserLine.enabled = false;
+            laserLine.enabled = true;
+            yield return shotDuration;
+            laserLine.enabled = false;
+        }
+        else
+        {
+            laserLine.enabled = false;
+            yield return shotDuration;
+        }
     }
 }
