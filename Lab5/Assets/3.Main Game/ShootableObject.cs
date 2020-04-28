@@ -6,6 +6,9 @@ public class ShootableObject : MonoBehaviour
 {
     public int currentHealth = 3;
     public static int points = 0;
+    public bool choose;
+
+    public AudioClip pointsAudio1;
 
     public void Damage(int damageAmount)
     {
@@ -13,7 +16,14 @@ public class ShootableObject : MonoBehaviour
         if (currentHealth <= 0)
         {
             points = points + 1;
+            choose = false;
             gameObject.SetActive(false);
+        }
+
+        if (currentHealth > 0)
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.PlayOneShot(pointsAudio1);
         }
     }
 }

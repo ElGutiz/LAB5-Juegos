@@ -11,7 +11,6 @@ public class GunScript : MonoBehaviour
     public float hitForce = 100f;
     public Transform gunEnd;
 
-    public AudioClip pointsAudio;
     public AudioClip gunAudio;
 
     private Camera fpsCam;
@@ -49,12 +48,6 @@ public class GunScript : MonoBehaviour
                 if (health != null)
                 {
                     health.Damage(gunDamage);
-                }
-
-                if (health.currentHealth == 0)
-                {
-                    AudioSource audio = GetComponent<AudioSource>();
-                    audio.PlayOneShot(pointsAudio);
                 }
 
                 if (hit.rigidbody != null)
