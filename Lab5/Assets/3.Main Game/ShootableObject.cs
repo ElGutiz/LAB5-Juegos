@@ -25,5 +25,10 @@ public class ShootableObject : MonoBehaviour
             AudioSource audio = GetComponent<AudioSource>();
             audio.PlayOneShot(pointsAudio1);
         }
+
+        if (points == 6)
+        {
+            points = points - points;
+        }
     }
 }
