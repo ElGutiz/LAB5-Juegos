@@ -9,6 +9,13 @@ public class ShootableObject : MonoBehaviour
     public bool choose;
 
     public AudioClip pointsAudio1;
+    public GameObject GameFinishedMenuUI;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        points = 0;
+    }
 
     public void Damage(int damageAmount)
     {
@@ -24,11 +31,6 @@ public class ShootableObject : MonoBehaviour
         {
             AudioSource audio = GetComponent<AudioSource>();
             audio.PlayOneShot(pointsAudio1);
-        }
-
-        if (points == 6)
-        {
-            points = points - points;
         }
     }
 }

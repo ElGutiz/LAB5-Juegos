@@ -608,6 +608,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2109881001}
+        m_MethodName: PlayAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &147424010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1144,7 +1155,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 397987999}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2109881001}
+        m_MethodName: LoadMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &397987999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1483,6 +1505,7 @@ MonoBehaviour:
   currentHealth: 3
   choose: 0
   pointsAudio1: {fileID: 8300000, guid: 35699091be08a3d46b8447495f46bcb0, type: 3}
+  GameFinishedMenuUI: {fileID: 379291339}
 --- !u!136 &600505922
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2232,6 +2255,7 @@ MonoBehaviour:
   currentHealth: 3
   choose: 0
   pointsAudio1: {fileID: 8300000, guid: 35699091be08a3d46b8447495f46bcb0, type: 3}
+  GameFinishedMenuUI: {fileID: 379291339}
 --- !u!136 &801100499
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3294,6 +3318,7 @@ MonoBehaviour:
   currentHealth: 3
   choose: 0
   pointsAudio1: {fileID: 8300000, guid: 35699091be08a3d46b8447495f46bcb0, type: 3}
+  GameFinishedMenuUI: {fileID: 379291339}
 --- !u!54 &1369714578
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3636,7 +3661,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 444364568}
   m_HandleRect: {fileID: 1475677004}
   m_Direction: 0
-  m_MinValue: 0.2
+  m_MinValue: 0.02
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -3976,6 +4001,7 @@ MonoBehaviour:
   currentHealth: 3
   choose: 0
   pointsAudio1: {fileID: 8300000, guid: 35699091be08a3d46b8447495f46bcb0, type: 3}
+  GameFinishedMenuUI: {fileID: 379291339}
 --- !u!136 &1787320018
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4431,6 +4457,7 @@ MonoBehaviour:
   currentHealth: 3
   choose: 0
   pointsAudio1: {fileID: 8300000, guid: 35699091be08a3d46b8447495f46bcb0, type: 3}
+  GameFinishedMenuUI: {fileID: 379291339}
 --- !u!136 &1949944003
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4928,6 +4955,7 @@ MonoBehaviour:
   currentHealth: 3
   choose: 0
   pointsAudio1: {fileID: 8300000, guid: 35699091be08a3d46b8447495f46bcb0, type: 3}
+  GameFinishedMenuUI: {fileID: 379291339}
 --- !u!82 &2064936037
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5143,3 +5171,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 2002825624}
   optionsMenuUI: {fileID: 578416573}
+  GameFinishedMenuUI: {fileID: 379291339}
+  Song2D: {fileID: 795389910}
